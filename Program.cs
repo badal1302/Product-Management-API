@@ -12,6 +12,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ProductContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Register repository and service
+builder.Services.AddScoped<ProductManagementApi.Repositories.IProductRepository, ProductManagementApi.Repositories.ProductRepository>();
+builder.Services.AddScoped<ProductManagementApi.Services.IProductService, ProductManagementApi.Services.ProductService>();
+
 var app = builder.Build();
 
 // Ensure database is created

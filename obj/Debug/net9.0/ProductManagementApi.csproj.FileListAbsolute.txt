@@ -165,3 +165,4 @@ D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApi\obj\Debug\
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApi\obj\Debug\net9.0\ProductManagementApi.pdb
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApi\obj\Debug\net9.0\ProductManagementApi.genruntimeconfig.cache
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApi\obj\Debug\net9.0\ref\ProductManagementApi.dll
+D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApi\obj\Debug\net9.0\ProductManagementApi.sourcelink.json
