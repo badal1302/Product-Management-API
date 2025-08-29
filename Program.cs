@@ -1,12 +1,44 @@
 using Microsoft.EntityFrameworkCore;
 using ProductManagementApi.Data;
+using ProductManagementApi.Services;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo 
+    { 
+        Title = "Product Management API", 
+        Version = "v1" 
+    });
+    
+    // Add Basic Authentication support to Swagger
+    c.AddSecurityDefinition("Basic", new OpenApiSecurityScheme
+    {
+        Type = SecuritySchemeType.Http,
+        Scheme = "Basic",
+        Description = "Basic Authentication header"
+    });
+    
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Basic"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 // Register EF Core DbContext with SQL Server Database
 builder.Services.AddDbContext<ProductContext>(options =>
@@ -15,6 +47,9 @@ builder.Services.AddDbContext<ProductContext>(options =>
 // Register repository and service
 builder.Services.AddScoped<ProductManagementApi.Repositories.IProductRepository, ProductManagementApi.Repositories.ProductRepository>();
 builder.Services.AddScoped<ProductManagementApi.Services.IProductService, ProductManagementApi.Services.ProductService>();
+
+// Register authentication service
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\ProductManagementApi.csproj": {}
+    "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\ProductManagementApi.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\ProductManagementApi.csproj": {
+    "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\ProductManagementApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\ProductManagementApi.csproj",
+        "projectUniqueName": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\ProductManagementApi.csproj",
         "projectName": "ProductManagementApi",
-        "projectPath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\ProductManagementApi.csproj",
+        "projectPath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\ProductManagementApi.csproj",
         "packagesPath": "C:\\Users\\Bada\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\obj\\",
+        "outputPath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

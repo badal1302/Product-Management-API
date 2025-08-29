@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductManagementApi.Models;
+using ProductManagementApi.Attributes;
 
 namespace ProductManagementApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [BasicAuth] // Require Basic authentication for all endpoints
     public class ProductsController : ControllerBase
     {
 

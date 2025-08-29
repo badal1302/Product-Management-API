@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "52bYn/I2Rq0=",
+  "dgSpecHash": "srT4evbAipU=",
   "success": true,
-  "projectFilePath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApi\\ProductManagementApi.csproj",
+  "projectFilePath": "D:\\Documents\\JOB\\Silver Xis\\ProductManagementApi\\ProductManagementApii\\ProductManagementApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bada\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Bada\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
