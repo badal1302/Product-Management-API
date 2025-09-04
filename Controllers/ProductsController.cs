@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductManagementApi.Models;
-using ProductManagementApi.Attributes;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ProductManagementApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [BasicAuth] // Require Basic authentication for all endpoints
+    [Authorize(AuthenticationSchemes = "DualAuth")] // Allow both JWT and Basic authentication
     public class ProductsController : ControllerBase
     {
 

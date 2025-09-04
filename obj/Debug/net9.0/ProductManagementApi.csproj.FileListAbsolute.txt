@@ -334,3 +334,4 @@ D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApii\obj\Debug
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApii\obj\Debug\net9.0\ProductManagementApi.pdb
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApii\obj\Debug\net9.0\ProductManagementApi.genruntimeconfig.cache
 D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApii\obj\Debug\net9.0\ref\ProductManagementApi.dll
+D:\Documents\JOB\Silver Xis\ProductManagementApi\ProductManagementApii\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
