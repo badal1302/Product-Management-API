@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductManagementApi.Models;
 using Microsoft.AspNetCore.Authorization;
+using ProductManagementApi.Attributes;
 
 namespace ProductManagementApi.Controllers
 {
@@ -18,6 +19,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpGet]
+        [RequireUserOrAdmin] // Both User and Admin can view products
         public async Task<ActionResult<object>> GetProducts([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
         {
             var (products, totalCount) = await _productService.GetProductsAsync(pageNumber, pageSize);
@@ -31,6 +33,7 @@ namespace ProductManagementApi.Controllers
 
 
         [HttpGet("{id}")]
+        [RequireUserOrAdmin] // Both User and Admin can view individual products
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);
@@ -39,6 +42,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpPost]
+        [RequireAdmin] // Only Admin can create products
         public async Task<ActionResult<Product>> CreateProduct(Product product)
         {
             var createdProduct = await _productService.AddProductAsync(product);
@@ -46,6 +50,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpPut("{id}")]
+        [RequireAdmin] // Only Admin can update products
         public async Task<IActionResult> UpdateProduct(int id, Product product)
         {
             product.Id = id;
@@ -55,6 +60,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpDelete("{id}")]
+        [RequireAdmin] // Only Admin can delete products
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var deleted = await _productService.DeleteProductAsync(id);

@@ -17,6 +17,7 @@ namespace ProductManagementApi.Controllers
         }
 
         [HttpGet("public")]
+        [AllowAnonymous] // Explicitly mark as public
         public IActionResult GetPublic()
         {
             return Ok(new { 
@@ -26,7 +27,7 @@ namespace ProductManagementApi.Controllers
         }
 
     [HttpGet("protected")]
-    [Authorize]
+    [RequireUserOrAdmin] // Both User and Admin can access protected endpoint
     public IActionResult GetProtected()
         {
             var user = HttpContext.Items["User"];
@@ -38,7 +39,7 @@ namespace ProductManagementApi.Controllers
         }
 
     [HttpGet("users")]
-    [Authorize]
+    [RequireAdmin] // Only Admin can access user information
         public IActionResult GetUsers()
         {
             // This is just for testing - in production you wouldn't expose user passwords

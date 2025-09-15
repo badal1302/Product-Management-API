@@ -1,6 +1,72 @@
 @ProductManagementApi_HostAddress = http://localhost:5210
 
+### 1. Login as Admin
+POST {{ProductManagementApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+### 2. Login as User
+POST {{ProductManagementApi_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "user123"
+}
+
+### 3. Get Products (requires User or Admin role)
 GET {{ProductManagementApi_HostAddress}}/api/products
+Authorization: Bearer <paste-token-here>
 Accept: application/json
+
+### 4. Create Product (requires Admin role)
+POST {{ProductManagementApi_HostAddress}}/api/products
+Authorization: Bearer <paste-admin-token-here>
+Content-Type: application/json
+
+{
+  "name": "New Product",
+  "description": "This is a new product",
+  "price": 99.99,
+  "inStock": true
+}
+
+### 5. Delete Product (requires Admin role)
+DELETE {{ProductManagementApi_HostAddress}}/api/products/1
+Authorization: Bearer <paste-admin-token-here>
+
+### 6. Get All Users (requires Admin role)
+GET {{ProductManagementApi_HostAddress}}/api/auth/users
+Authorization: Bearer <paste-admin-token-here>
+
+### 7. Create User (requires Admin role)
+POST {{ProductManagementApi_HostAddress}}/api/auth/users
+Authorization: Bearer <paste-admin-token-here>
+Content-Type: application/json
+
+{
+  "username": "newuser",
+  "password": "newpassword123",
+  "role": "User"
+}
+
+### 8. Get Profile (requires User or Admin role)
+GET {{ProductManagementApi_HostAddress}}/api/auth/profile
+Authorization: Bearer <paste-token-here>
+
+### 9. Test Public Endpoint (no authentication required)
+GET {{ProductManagementApi_HostAddress}}/api/test/public
+
+### 10. Test Protected Endpoint (requires User or Admin role)
+GET {{ProductManagementApi_HostAddress}}/api/test/protected
+Authorization: Bearer <paste-token-here>
+
+### 11. Test Admin Only Endpoint (requires Admin role)
+GET {{ProductManagementApi_HostAddress}}/api/test/users
+Authorization: Bearer <paste-admin-token-here>
 
 ###
